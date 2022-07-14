@@ -1,0 +1,30 @@
+name: Update posts from issues
+
+on:
+  issues:
+    types: ["opened", "edited"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - name: Generate Post
+        env:
+          POST_TITLE: ${{ github.event.issue.title }}
+          POST_BODY: ${{ github.event.issue.body }}
+        run: |
+          cat > "content/posts/${POST_TITLE}.md" << EOF
+          ${POST_BODY}
+          EOF
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          delete-branch: true
+          title: "publish: ${{ github.event.issue.title}}"
+          body: |
+            Automatically sprouted for publishing.
+            Merging will publish to: https://oxymnds.dev/posts/${{ github.event.issue.title }}
+            Closes #${{ github.event.issue.number }}
+          reviewers: ${{ github.repository_owner }}
+          commit-message: "post: ${{ github.event.issue.title }}"
