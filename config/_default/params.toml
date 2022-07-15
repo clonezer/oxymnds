@@ -3,5 +3,6 @@ homepage.layout = "profile"
 homepage.showRecent = true
 mainPosts = ["posts"]
 enableSearch = true
+article.showComments = true
 footer.showAppearanceSwitcher = true
 footer.showScrollToTop = true
