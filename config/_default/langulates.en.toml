@@ -1,0 +1,17 @@
+title = "Peerasak Unsakon"
+
+[author]
+name = "Peerasak Unsakon"
+image = "img/avatar.jpg"
+headline = "An iOS Developer based in Sakon Nakhon, Thailand"
+bio = "iOS Developer @ Avantis"
+links = [
+  { twitter = "https://twitter.com/clonez" },
+  { github = "https://github.com/clonezer" },
+  { linkedin = "https://www.linkedin.com/in/peerasak-u//" },
+  { email = "mailto:contact@peerasak.com" }
+]
+
+[share-links-active]
+  twitter = true
+  linkedin = true

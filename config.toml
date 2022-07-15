@@ -1,4 +1,6 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'Oxymnds'
+baseURL = '/'
+languageCode = 'en'
+title = 'Peerasak Unsakon'
 theme = 'congo'
+avatar = 'image/avatar.jpg'
+summaryLength = 10
